@@ -23,7 +23,7 @@ function Boas_vindas() {
       </div>
 
       <div style={{fontSize:'500%', display:'flex', justifyContent: 'center'}}>
-      {Emoji ? Emoji : 'oii'}
+      {Emoji ? Emoji : ''}
       </div>
       
     </div>
