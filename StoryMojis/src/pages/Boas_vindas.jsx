@@ -3,24 +3,27 @@ import './Boas_vindas.css'
 
 function Boas_vindas() {
 
-    const [icon, setIcon] = useState('')
-    const sortearIcon = () => {
-        const sorteio = Math.floor(Math.random() * 5);
-        setIcon (sorteio + '.svg');
+    const [Emoji, setEmoji] = useState()
+
+    const emojis = ['😍', '🎶', '🥶', '🤬', '🤢', '🤒', '🤠', '🤡', '🥳', '🥸', '👽', '💩', '🐵', '🐶', '🐱', '🐷', '🐔', '🦈', '🦆', '🦐', '🐧', '🐞', '👸', '🕵️', '🎅', '🥷', '🧑‍🍳', '👩‍💻']
+    const sortearEmoji = () => {
+        const sorteio = Math.floor(Math.random() * emojis.length);
+        const emojisSorteado = emojis[sorteio];
+        setEmoji (emojisSorteado);
     };
   return (
     <div>
-      <h1 className='bemvindo'>StoryIcons</h1>
-      <h2 className='explicacao'>Neste jogo você cria suas próprias histórias apartir dos icon sorteados</h2>
+      <h1 className='bemvindo'>StoryMojis</h1>
+      <h2 className='explicacao'>Neste jogo você cria suas próprias histórias apartir dos Emoji sorteados</h2>
       
 
       
       <div className='button'>
-        <button onClick={sortearIcon} className='Sorteio'>Sortear Icon</button>
+        <button onClick={sortearEmoji} className='Sorteio'>Sortear Emoji</button>
       </div>
 
       <div style={{fontSize:'500%', display:'flex', justifyContent: 'center'}}>
-      <img src={icon} alt="Ícone sorteado" />
+      {Emoji ? Emoji : 'oii'}
       </div>
       
     </div>
